@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  </head>
+  <body>
+    <header class="topbar py-2">
+      <!-- Offcanvas Menu -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+      <div class="offcanvas-header">
+          <h5 id="offcanvasMenuLabel"><img src="{{ url_for('static', filename='image/Npontu logo.png') }}"height="100" alt="Logo"></h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav nav-pills flex-column">
+          <li class="nav-item">
+            <a class="nav-link px-3" href="{{ url_for('engineering') }}">
+              <iconify-icon icon="solar:layers-line-duotone" class="fs-6" style="justify-content: left;"></iconify-icon>
+              <span class="ms-2">Engineering/Products</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-3" href="{{ url_for('finance') }}">
+                <iconify-icon icon="solar:layers-line-duotone" class="fs-6" style="justify-content: left;"></iconify-icon>
+                <span class="ms-2">Finance</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-3" href="{{ url_for('business') }}">
+                <iconify-icon icon="solar:layers-line-duotone" class="fs-6" style="justify-content: left;"></iconify-icon>
+                <span class="ms-2">Business</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active nav-icon-hover-bg align-items-center rounded-1 px-3 justify-content-center" aria-current="page" style="width: fit-content; color: white; box-sizing: border-box;" href="{{ url_for('operations') }}">
+                <iconify-icon icon="solar:layers-line-duotone" class="fs-6" style="justify-content: left;"></iconify-icon>
+                <span class="ms-2">Operations</span>
+            </a>
+         </li>
+          <li class="nav-item">
+              <a class="nav-link px-3" href="#">
+                  <iconify-icon icon="solar:layers-line-duotone" class="fs-6" style="justify-content: left;"></iconify-icon>
+                  <span class="ms-2">Talents/Compliance</span>
+              </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link px-3" href="#">
+                  <iconify-icon icon="solar:layers-line-duotone" class="fs-6" style="justify-content: left;"></iconify-icon>
+                  <span class="ms-2">Facilities</span>
+              </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link px-3" href="#">
+                  <iconify-icon icon="solar:layers-line-duotone" class="fs-6" style="justify-content: left;"></iconify-icon>
+                  <span class="ms-2">Brands/Marketing</span>
+              </a>
+          </li>
+      </ul>
+      </div>
+  </div>
+
+  <!-- Main Navbar -->
+  <nav class="navbar navbar-expand-lg py-1" style="margin-top: -1rem;">
+      <div class="container-fluid">
+          <!-- Navbar Toggler -->
+          <button class="navbar-toggler me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <a href="#"><img src="{{ url_for('static', filename='image/Npontu logo.png') }}"height="100" alt="Logo" class="ms-5"></a>
+          <!-- Navbar Brand -->
+          <a class="navbar-brand ms-1" href="#">Executive Dashboard</a>
+          <!-- Primary Navbar Content -->
+          <div class="collapse navbar-collapse justify-content-around" id="navbarNav">
+            <ul style="margin-left: 52rem;">
+              <li class="nav-item dropdown">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle rounded-4 rounded-circle p-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="{{ url_for('static', filename='image/logo.png') }}" width="26" height="26" alt="User"/>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" href="{{ url_for('usermanagement')}}">User Management</a></li>
+                      <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                    </ul>
+                  </div>
+              </li>
+            </ul>
+          </div>
+      </div>
+   </nav>
+  <!-- Secondary Navbar -->
+  <nav class="navbar py-1 d-none d-lg-flex" style="margin-top: -3rem;">
+    <div class="container-fluid justify-content-around">
+        <ul class="navbar-nav nav-pills flex-row">
+            <li class="nav-item">
+              <a class="nav-link px-3" href="{{ url_for('engineering') }}">
+                <iconify-icon icon="solar:layers-line-duotone" class="fs-6" style="justify-content: left;"></iconify-icon>
+                <span class="ms-2">Engineering/Products</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="{{ url_for('finance') }}">
+                  <iconify-icon icon="solar:layers-line-duotone" class="fs-6" style="justify-content: left;"></iconify-icon>
+                  <span class="ms-2">Finance</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="{{ url_for('business') }}">
+                  <iconify-icon icon="solar:layers-line-duotone" class="fs-6" style="justify-content: left;"></iconify-icon>
+                  <span class="ms-2">Business</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active nav-icon-hover-bg align-items-center rounded-1 px-3 justify-content-center" aria-current="page" style="width: fit-content; color: white; box-sizing: border-box;" href="{{ url_for('operations') }}">
+                  <iconify-icon icon="solar:layers-line-duotone" class="fs-6" style="justify-content: left;"></iconify-icon>
+                  <span class="ms-2">Operations</span>
+              </a>
+           </li>
+            <li class="nav-item">
+                <a class="nav-link px-3" href="#">
+                    <iconify-icon icon="solar:layers-line-duotone" class="fs-6" style="justify-content: left;"></iconify-icon>
+                    <span class="ms-2">Talents/Compliance</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link px-3" href="#">
+                    <iconify-icon icon="solar:layers-line-duotone" class="fs-6" style="justify-content: left;"></iconify-icon>
+                    <span class="ms-2">Facilities</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link px-3" href="#">
+                    <iconify-icon icon="solar:layers-line-duotone" class="fs-6" style="justify-content: left;"></iconify-icon>
+                    <span class="ms-2">Brands/Marketing</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+</header>
+   
+    <div class="body-wrapper">
+      <div class="container-fluid d-flex justify-content-center align-items-center" style="margin-top: 10rem; min-height: 50vh;">
+          <div class="row justify-content-center align-items-center w-100"> <!-- Adjust width to control centering inside the container -->
+              
+             <div class="col-lg-6">
+              <!-- -------------------------------------------- -->
+              <!-- Company Efficiency -->
+              <!-- -------------------------------------------- -->
+              <div class="card overflow-hidden shadow-none" style="background-color: #ffffff;">
+                <div class="card-body p-3">
+                    <div class="hstack align-items-center gap-3">
+                        <span class="d-flex align-items-center justify-content-center round-48 rounded flex-shrink-0" style="background-color: #e2e0fc;">
+                            <iconify-icon icon="solar:round-graph-broken" class="fs-8 text-primary"></iconify-icon>
+                        </span>
+                        <div>
+                            <h5 class="card-title">Company Efficiency</h5>
+                        </div>
+                        <form class="d-flex align-items-center ms-auto">
+                          <div class="form-group me-2">
+                              <small>Start date</small>
+                              <input type="date" class="form-control" value="2020-01-01" id="start_date">
+                          </div>
+                          <div class="form-group">
+                              <small>End date</small>
+                              <input type="date" class="form-control" value="2024-01-01" id="end_date">
+                          </div>
+                      </form>
+                    </div>
+                        <div id="efficiencyScoreChart"></div>
+                </div>
+              </div>
+          </div>
+  
+          <div class="col-lg-6">
+            <!-- -------------------------------------------- -->
+            <!-- NPS  -->
+            <!-- -------------------------------------------- -->
+            <div class="card overflow-hidden shadow-none" style="background-color: #ffffff;">
+                <div class="card-body p-3">
+                  <div class="hstack align-items-center gap-3">
+                    <span class="d-flex align-items-center justify-content-center round-48 rounded flex-shrink-0" style="background-color: #e2e0fc;">
+                        <iconify-icon icon="solar:graph-broken" class="fs-8 text-primary"></iconify-icon>
+                    </span>
+                    <div>
+                        <h5 class="card-title">Net Promotor Score </h5>
+                    </div>
+                    <form class="d-flex align-items-center ms-auto">
+                      <div class="form-group me-2">
+                          <small>Start date</small>
+                          <input type="date" class="form-control" value="2020-01-01" id="start_date">
+                      </div>
+                      <div class="form-group">
+                          <small>End date</small>
+                          <input type="date" class="form-control" value="2024-01-01" id="end_date">
+                      </div>
+                  </form>
+                </div>
+                
+                <div id="npsChart" style="margin-top: 0.0625rem;"></div>
+                </div>
+              </div>
+           </div>
+  
+           <div class="col-lg-6">
+            <!-- Tickets (Open vs Closed) -->
+            <div class="card overflow-hidden shadow-none" style="background-color: #ffffff;">
+                <div class="card-body p-3">
+                    <div class="hstack align-items-center gap-3">
+                        <span class="d-flex align-items-center justify-content-center round-48 rounded flex-shrink-0" style="background-color: #e2e0fc;">
+                            <iconify-icon icon="solar:chart-2-broken" class="fs-8 text-primary"></iconify-icon>
+                        </span>
+                        <div>
+                            <h5 class="card-title">Tickets</h5>
+                            <p>Open vs Closed</p>
+                        </div>
+                        <form class="d-flex align-items-center ms-auto mb-2 mb-lg-0">
+                            <div class="form-group me-2">
+                                <small>Select Product</small>
+                                <select class="form-control" id="productSelect">
+                                    <option selected>Product 1</option>
+                                    <option value="1">Product 2</option>
+                                    <option value="2">Product 3</option>
+                                    <option value="3">Product 4</option>
+                                    <option value="4">Product 5</option>
+                                </select>
+                            </div>
+                            <div class="form-group me-2">
+                                <small>Select Service</small>
+                                <select class="form-control" id="serviceSelect">
+                                    <option selected>Service 1</option>
+                                    <option value="1">Service 2</option>
+                                    <option value="2">Service 3</option>
+                                    <option value="3">Service 4</option>
+                                    <option value="4">Service 5</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="ticketsChart" style="margin-top: 0.0625rem; height: 18.75rem;"></div>
+                </div>
+            </div>
+        </div>
+        
+  
+           <div class="col-lg-6">
+            <!-- -------------------------------------------- -->
+            <!-- Tickets (Open vs Closed) -->
+            <!-- -------------------------------------------- -->
+            <div class="card overflow-hidden shadow-none" style="background-color: #ffffff;">
+                <div class="card-body p-3">
+                  <div class="hstack align-items-center gap-3">
+                    <span class="d-flex align-items-center justify-content-center round-48 rounded flex-shrink-0" style="background-color: #e2e0fc;">
+                        <iconify-icon icon="solar:chart-2-broken" class="fs-8 text-primary"></iconify-icon>
+                    </span>
+                    <div>
+                        <h5 class="card-title">Service Degradation</h5>
+                    </div>
+                    <form class="d-flex align-items-center ms-auto">
+                      <div class="form-group me-2">
+                          <small>Start date</small>
+                          <input type="date" class="form-control" value="2020-01-01" id="start_date">
+                      </div>
+                      <div class="form-group">
+                          <small>End date</small>
+                          <input type="date" class="form-control" value="2024-01-01" id="end_date">
+                      </div>
+                    </form>
+                </div>
+                
+                <div id="serviceDegradationAlert" style="margin-top: 0.0625rem;"></div>
+                </div>
+              </div>
+           </div>
+      </div>
+  </div>
+  
+
+
+
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
+    <script src="{{ url_for('static', filename='js/apexcharts.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/operations.js') }}"></script>
+  </body>
+</html> 
